@@ -20,12 +20,6 @@ class ListViewController: UIViewController {
     "background_9", "background_10", "background_11", "background_12"
   ]
   
-  let testColors: [UIColor] = [ // for cell size test.
-    .red, .orange, .yellow, .green,
-    .blue, .purple, .black, .gray,
-    .systemRed, .systemOrange, .systemYellow, .systemGreen
-  ]
-  
   var anniversaryList: [Anniversary] = [
     Anniversary(title: "광복절", date: "2021-08-15"),
     Anniversary(title: "생일", date: "2021-12-13"),
@@ -51,6 +45,12 @@ class ListViewController: UIViewController {
   func getRandomBackgroundImage(_ images: [String]) -> UIImage {
     let imgName = images.randomElement()!
     return UIImage(named: imgName) ?? UIImage(systemName: "pencil")!
+  }
+  
+  func getDday(_ anniversary: Anniversary) -> Int {
+    let df = DateFormatter()
+    let anniDate = df.toDate(date: anniversary.date)
+    return today.daysBetween(date: anniDate)
   }
 }
 
@@ -79,13 +79,10 @@ extension ListViewController: UICollectionViewDataSource {
     
     let item = anniversaryList[indexPath.row]
     cell.anniImageView.image = getRandomBackgroundImage(backgroundImages)
-    cell.anniImageView.backgroundColor = testColors[indexPath.row]
     cell.anniTitleLabel.text = item.title
     cell.anniDateLabel.text = item.date
-    
-    let df = DateFormatter()
-    let anniDate = df.toDate(date: item.date)
-    let dday = today.daysBetween(date: anniDate)
+
+    let dday = getDday(item)
     
     if dday.isPlus {
       cell.anniDDaylabel.text = "-\(dday)일"
