@@ -10,25 +10,32 @@ import UIKit
 class ListViewController: UIViewController {
   
   // MARK: Properties
+  let today = Date()
+  
   let cellInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
   let backgroundImages: [String] = [
     "background_1", "background_2", "background_3", "background_4",
     "background_5", "background_6", "background_7", "background_8",
-    "background_9", "background_10", "background_11", "background_12", "background_13"
+    "background_9", "background_10", "background_11", "background_12"
   ]
   
   let testColors: [UIColor] = [ // for cell size test.
     .red, .orange, .yellow, .green,
     .blue, .purple, .black, .gray,
-    .systemRed, .systemOrange, .systemYellow, .systemGreen, .systemBlue
+    .systemRed, .systemOrange, .systemYellow, .systemGreen
   ]
   
   var anniversaryList: [Anniversary] = [
-    Anniversary(title: "생일", date: Date(), dday: "+100"),
-    Anniversary(title: "설날", date: Date(), dday: "+120"),
-    Anniversary(title: "빼빼로데이", date: Date(), dday: "+30"),
-    Anniversary(title: "크리스마스", date: Date(), dday: "+53")
+    Anniversary(title: "광복절", date: "2021-08-15"),
+    Anniversary(title: "생일", date: "2021-12-13"),
+    Anniversary(title: "설날", date: "2022-01-01"),
+    Anniversary(title: "빼빼로데이", date: "2021-11-11"),
+    Anniversary(title: "크리스마스", date: "2021-12-25"),
+    Anniversary(title: "모레", date: "2021-10-10"),
+    Anniversary(title: "내일", date: "2021-10-09"),
+    Anniversary(title: "오늘", date: "2021-10-08"),
+    Anniversary(title: "어제", date: "2021-10-07")
   ]
   
   // MARK: UI
@@ -69,11 +76,23 @@ extension ListViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
     cell.cellConfigure()
+    
     let item = anniversaryList[indexPath.row]
     cell.anniImageView.image = getRandomBackgroundImage(backgroundImages)
     cell.anniImageView.backgroundColor = testColors[indexPath.row]
     cell.anniTitleLabel.text = item.title
-    cell.anniDDaylabel.text = item.dday
+    cell.anniDateLabel.text = item.date
+    
+    let df = DateFormatter()
+    let anniDate = df.toDate(date: item.date)
+    let dday = today.daysBetween(date: anniDate)
+    
+    if dday.isPlus {
+      cell.anniDDaylabel.text = "-\(dday)일"
+    } else {
+      cell.anniDDaylabel.text = "+\(-dday)일"
+    }
+    
     return cell
   }
 }

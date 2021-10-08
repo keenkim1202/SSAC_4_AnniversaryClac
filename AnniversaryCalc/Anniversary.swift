@@ -10,13 +10,13 @@ import UIKit
 
 class Anniversary {
   var title: String
-  var date: Date?
-  var dday: String
-  var image: UIImage?
+  var date: String
+  var dday: Int
+//  var image: UIImage?
   
-  init(title: String, date: Date?, dday: String) {
+  init(title: String, date: String) {
     self.title = title
-    self.date = date ?? Date()
-    self.dday = dday
+    self.date = date
+    self.dday = 0
   }
 }
