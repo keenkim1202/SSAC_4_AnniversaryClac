@@ -27,9 +27,16 @@ class ChangeDateViewController: UIViewController {
     destination.today = changeDate
   }
   
+
+  
+
   // MARK: - Actions
   @IBAction func onCancel(_ sender: UIBarButtonItem) {
     self.navigationController?.popViewController(animated: true)
+  }
+  @IBAction func onChange(_ sender: UIBarButtonItem) {
+    performSegue(withIdentifier: "unwindToListVC", sender: self)
+
   }
   
   @IBAction func onDatePicker(_ sender: UIDatePicker) {

@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEZ-ap-pGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2747.826086956522" y="817.63392857142856"/>
+            <point key="canvasLocation" x="2749" y="818"/>
         </scene>
         <!--기준 날짜 변경-->
         <scene sceneID="rfc-1Y-yXM">
@@ -195,7 +195,7 @@
                         <barButtonItem key="rightBarButtonItem" title="변경" id="aVj-VY-HBu">
                             <color key="tintColor" systemColor="systemGreenColor"/>
                             <connections>
-                                <segue destination="hwY-rf-i7r" kind="show" id="W9J-qv-ifq"/>
+                                <action selector="onChange:" destination="1R0-Gl-BcQ" id="D1i-2Q-unt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -203,9 +203,11 @@
                     <connections>
                         <outlet property="choosenLabel" destination="kbE-up-qKi" id="zwB-Hf-Bjx"/>
                         <outlet property="datePicker" destination="fsV-vz-xOg" id="7oO-W5-Jvq"/>
+                        <segue destination="XNH-lv-1Mv" kind="unwind" identifier="unwindToListVC" unwindAction="unwindToListVCWithSegue:" id="CoE-P7-PCr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SH-dD-n44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="XNH-lv-1Mv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3649" y="818"/>
         </scene>
@@ -369,9 +371,6 @@
             <point key="canvasLocation" x="1839" y="818"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="c9e-gh-Vio"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>

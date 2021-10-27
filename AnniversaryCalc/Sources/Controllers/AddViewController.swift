@@ -50,6 +50,7 @@ class AddViewController: UIViewController {
       let date = df.toString(date: newDate)
       AnniversaryData.anniversaryList.append(Anniversary(title: title, date: date))
       self.view.endEditing(true)
+      titleTextField.text = ""
       showAlert("🎊", "기념일 추가 성공!")
     } else {
       showAlert("⚠️ 오류 🤯", "어떤 기념일인가요?\n타이틀을 적어주세요.")
