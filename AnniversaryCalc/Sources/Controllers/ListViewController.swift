@@ -10,7 +10,11 @@ import UIKit
 class ListViewController: UIViewController {
   
   // MARK: Properties
-  let today = Date()
+  var today = Date() {
+    didSet {
+      self.collectionView.reloadData()
+    }
+  }
   
   let cellInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 

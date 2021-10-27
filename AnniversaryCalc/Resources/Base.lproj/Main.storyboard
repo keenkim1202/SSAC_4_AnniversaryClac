@@ -19,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fGa-dW-Crs">
                                 <rect key="frame" x="10" y="98" width="394" height="715"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.9559714198" green="0.9990388751" blue="0.81958144899999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a69-Ty-tTZ">
                                     <size key="itemSize" width="166" height="166"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -45,15 +45,18 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="31t-yE-suQ">
                                                             <rect key="frame" x="50.5" y="64" width="65" height="38.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="기념일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-cK-Jyl">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기념일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-cK-Jyl">
                                                                     <rect key="frame" x="0.0" y="0.0" width="65" height="21.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="21.5" id="2b8-QS-m1g"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <size key="shadowOffset" width="1" height="1"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2021.01.01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwo-P8-4Us">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.01.01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwo-P8-4Us">
                                                                     <rect key="frame" x="0.0" y="21.5" width="65" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,7 +119,14 @@
                             <constraint firstItem="gpj-kb-PpW" firstAttribute="trailing" secondItem="fGa-dW-Crs" secondAttribute="trailing" constant="10" id="mqY-OO-hWm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="기념일 목록" id="VXa-aM-7wg"/>
+                    <navigationItem key="navigationItem" title="기념일 목록" id="VXa-aM-7wg">
+                        <barButtonItem key="rightBarButtonItem" title="가준날짜 변경" id="Xje-43-Rmd">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
+                            <connections>
+                                <segue destination="1R0-Gl-BcQ" kind="show" id="lu6-Qk-wtE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="fGa-dW-Crs" id="t81-IY-h5t"/>
                     </connections>
@@ -124,6 +134,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEZ-ap-pGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2747.826086956522" y="817.63392857142856"/>
+        </scene>
+        <!--기준 날짜 변경-->
+        <scene sceneID="rfc-1Y-yXM">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="1R0-Gl-BcQ" customClass="ChangeDateViewController" customModule="AnniversaryCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I7S-RF-m7P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="lri-My-pnc">
+                                <rect key="frame" x="0.0" y="204.5" width="414" height="492.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="변경할 기준일을 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b72-jx-Vzq">
+                                        <rect key="frame" x="93.5" y="0.0" width="227.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="fsV-vz-xOg">
+                                        <rect key="frame" x="47" y="75.5" width="320" height="343"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( 선택한 날짜가 출력됩니다. )" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbE-up-qKi">
+                                        <rect key="frame" x="10" y="468.5" width="394" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kbE-up-qKi" firstAttribute="leading" secondItem="lri-My-pnc" secondAttribute="leading" constant="10" id="HFL-4m-fiO"/>
+                                    <constraint firstAttribute="trailing" secondItem="kbE-up-qKi" secondAttribute="trailing" constant="10" id="NYn-n1-N0G"/>
+                                    <constraint firstAttribute="trailing" secondItem="fsV-vz-xOg" secondAttribute="trailing" constant="47" id="Of7-57-0x3"/>
+                                    <constraint firstItem="fsV-vz-xOg" firstAttribute="centerX" secondItem="lri-My-pnc" secondAttribute="centerX" id="THp-uf-wOo"/>
+                                    <constraint firstItem="fsV-vz-xOg" firstAttribute="leading" secondItem="lri-My-pnc" secondAttribute="leading" constant="47" id="Xmy-Nx-ghS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nuZ-VK-dIo"/>
+                        <color key="backgroundColor" red="0.9559714198" green="0.9990388751" blue="0.81958144899999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="nuZ-VK-dIo" firstAttribute="leading" secondItem="lri-My-pnc" secondAttribute="leading" id="Mua-jh-V9B"/>
+                            <constraint firstItem="lri-My-pnc" firstAttribute="centerX" secondItem="nuZ-VK-dIo" secondAttribute="centerX" id="Uzu-F9-C3R"/>
+                            <constraint firstItem="nuZ-VK-dIo" firstAttribute="trailing" secondItem="lri-My-pnc" secondAttribute="trailing" id="cVB-lE-Wui"/>
+                            <constraint firstItem="lri-My-pnc" firstAttribute="centerY" secondItem="nuZ-VK-dIo" secondAttribute="centerY" id="f0u-u1-Mjl"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="기준 날짜 변경" id="cCh-CY-vGK">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="gLE-Q8-dXf">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
+                            <connections>
+                                <action selector="onCancel:" destination="1R0-Gl-BcQ" id="dm0-ft-Jnd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="변경" id="aVj-VY-HBu">
+                            <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="onChange:" destination="1R0-Gl-BcQ" id="CrB-ub-imw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="choosenLabel" destination="kbE-up-qKi" id="zwB-Hf-Bjx"/>
+                        <outlet property="datePicker" destination="fsV-vz-xOg" id="1zb-an-fE3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4SH-dD-n44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3649" y="818"/>
         </scene>
         <!--기념일 등록-->
         <scene sceneID="tne-QT-ifu">
@@ -239,7 +320,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3C3-t0-J9W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="98"/>
+            <point key="canvasLocation" x="703" y="467"/>
         </scene>
         <!--기념일 등록-->
         <scene sceneID="TQP-Zw-VKv">
@@ -285,6 +366,9 @@
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
