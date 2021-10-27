@@ -9,6 +9,9 @@ import UIKit
 
 class ChangeDateViewController: UIViewController {
   
+  // MARK: - Properties
+  var newDate = Date()
+  
   // MARK: - UI
   @IBOutlet weak var datePicker: UIDatePicker!
   @IBOutlet weak var choosenLabel: UILabel!
@@ -16,7 +19,12 @@ class ChangeDateViewController: UIViewController {
   // MARK: - View Life-Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+  }
+  
+  // MARK: - PrepareForSegue
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let destination = segue.destination as! ListViewController
+    destination.today = newDate
   }
   
   // MARK: - Actions
@@ -24,10 +32,13 @@ class ChangeDateViewController: UIViewController {
     self.navigationController?.popViewController(animated: true)
   }
   
-  @IBAction func onChange(_ sender: UIBarButtonItem) {
+  @IBAction func onDatePicker(_ sender: UIDatePicker) {
+    let df = DateFormatter()
+    df.locale = Locale(identifier: "ko-KR")
+    df.dateStyle = . medium
+    df.timeStyle = .medium
     
-    
-    self.navigationController?.popViewController(animated: true)
+    newDate = datePicker.date
+    choosenLabel.text = df.string(from: newDate)
   }
 }
-

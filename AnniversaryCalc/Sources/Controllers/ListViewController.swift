@@ -10,11 +10,7 @@ import UIKit
 class ListViewController: UIViewController {
   
   // MARK: Properties
-  var today = Date() {
-    didSet {
-      self.collectionView.reloadData()
-    }
-  }
+  var today = Date()
   
   let cellInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
@@ -44,6 +40,10 @@ class ListViewController: UIViewController {
     super.viewDidLoad()
     collectionView.delegate = self
     collectionView.dataSource = self
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    self.collectionView.reloadData()
   }
   
   func getRandomBackgroundImage(_ images: [String]) -> UIImage {

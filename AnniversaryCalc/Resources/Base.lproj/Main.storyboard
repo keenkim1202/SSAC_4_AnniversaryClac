@@ -12,13 +12,13 @@
         <!--기념일 목록-->
         <scene sceneID="wuY-Mm-GdS">
             <objects>
-                <viewController id="hwY-rf-i7r" customClass="ListViewController" customModule="AnniversaryCalc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listVC" id="hwY-rf-i7r" customClass="ListViewController" customModule="AnniversaryCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mif-xv-8tz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fGa-dW-Crs">
-                                <rect key="frame" x="10" y="98" width="394" height="715"/>
+                                <rect key="frame" x="10" y="54" width="394" height="759"/>
                                 <color key="backgroundColor" red="0.9559714198" green="0.9990388751" blue="0.81958144899999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a69-Ty-tTZ">
                                     <size key="itemSize" width="166" height="166"/>
@@ -144,7 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="lri-My-pnc">
-                                <rect key="frame" x="0.0" y="204.5" width="414" height="492.5"/>
+                                <rect key="frame" x="0.0" y="207" width="414" height="492.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="변경할 기준일을 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b72-jx-Vzq">
                                         <rect key="frame" x="93.5" y="0.0" width="227.5" height="25.5"/>
@@ -155,6 +155,9 @@
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="fsV-vz-xOg">
                                         <rect key="frame" x="47" y="75.5" width="320" height="343"/>
                                         <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="onDatePicker:" destination="1R0-Gl-BcQ" eventType="valueChanged" id="Hy2-bw-pKd"/>
+                                        </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( 선택한 날짜가 출력됩니다. )" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbE-up-qKi">
                                         <rect key="frame" x="10" y="468.5" width="394" height="24"/>
@@ -192,14 +195,14 @@
                         <barButtonItem key="rightBarButtonItem" title="변경" id="aVj-VY-HBu">
                             <color key="tintColor" systemColor="systemGreenColor"/>
                             <connections>
-                                <action selector="onChange:" destination="1R0-Gl-BcQ" id="CrB-ub-imw"/>
+                                <segue destination="hwY-rf-i7r" kind="show" id="W9J-qv-ifq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="choosenLabel" destination="kbE-up-qKi" id="zwB-Hf-Bjx"/>
-                        <outlet property="datePicker" destination="fsV-vz-xOg" id="1zb-an-fE3"/>
+                        <outlet property="datePicker" destination="fsV-vz-xOg" id="7oO-W5-Jvq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SH-dD-n44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -361,6 +364,9 @@
             <point key="canvasLocation" x="1839" y="818"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="W9J-qv-ifq"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
