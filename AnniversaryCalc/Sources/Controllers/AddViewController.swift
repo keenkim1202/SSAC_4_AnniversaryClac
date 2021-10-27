@@ -51,6 +51,7 @@ class AddViewController: UIViewController {
       AnniversaryData.anniversaryList.append(Anniversary(title: title, date: date))
       self.view.endEditing(true)
       titleTextField.text = ""
+      dateLabel.text = "(기념일을 선택하세요)"
       showAlert("🎊", "기념일 추가 성공!")
     } else {
       showAlert("⚠️ 오류 🤯", "어떤 기념일인가요?\n타이틀을 적어주세요.")
