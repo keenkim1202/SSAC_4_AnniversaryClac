@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C6054DE27290B0D00DFBEB9 /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6054DD27290B0D00DFBEB9 /* ChangeDateViewController.swift */; };
 		1C6054E627291D4E00DFBEB9 /* AnniversaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6054E527291D4E00DFBEB9 /* AnniversaryData.swift */; };
+		1C6054E9272920B600DFBEB9 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1C6054E8272920B600DFBEB9 /* IQKeyboardManagerSwift */; };
+		1C6054EB2729213700DFBEB9 /* AnniversaryCalc++UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6054EA2729213700DFBEB9 /* AnniversaryCalc++UIAlert.swift */; };
 		1C8FD97727101C37003BE379 /* AnniversaryCalc++Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8FD97627101C37003BE379 /* AnniversaryCalc++Int.swift */; };
 		1C8FD97927101FCA003BE379 /* AnniversaryCalc++Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8FD97827101FCA003BE379 /* AnniversaryCalc++Date.swift */; };
 		1C95FECF270FDBFD00381E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C95FECE270FDBFD00381E0B /* AppDelegate.swift */; };
@@ -26,6 +28,7 @@
 /* Begin PBXFileReference section */
 		1C6054DD27290B0D00DFBEB9 /* ChangeDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateViewController.swift; sourceTree = "<group>"; };
 		1C6054E527291D4E00DFBEB9 /* AnniversaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryData.swift; sourceTree = "<group>"; };
+		1C6054EA2729213700DFBEB9 /* AnniversaryCalc++UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryCalc++UIAlert.swift"; sourceTree = "<group>"; };
 		1C8FD97627101C37003BE379 /* AnniversaryCalc++Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryCalc++Int.swift"; sourceTree = "<group>"; };
 		1C8FD97827101FCA003BE379 /* AnniversaryCalc++Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryCalc++Date.swift"; sourceTree = "<group>"; };
 		1C95FECB270FDBFD00381E0B /* AnniversaryCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnniversaryCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6054E9272920B600DFBEB9 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +81,7 @@
 				1C95FF0827100B6700381E0B /* AnniversaryCalc++DateFormatter.swift */,
 				1C8FD97627101C37003BE379 /* AnniversaryCalc++Int.swift */,
 				1C8FD97827101FCA003BE379 /* AnniversaryCalc++Date.swift */,
+				1C6054EA2729213700DFBEB9 /* AnniversaryCalc++UIAlert.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -155,6 +160,9 @@
 			dependencies = (
 			);
 			name = AnniversaryCalc;
+			packageProductDependencies = (
+				1C6054E8272920B600DFBEB9 /* IQKeyboardManagerSwift */,
+			);
 			productName = AnniversaryCalc;
 			productReference = 1C95FECB270FDBFD00381E0B /* AnniversaryCalc.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +191,9 @@
 				Base,
 			);
 			mainGroup = 1C95FEC2270FDBFD00381E0B;
+			packageReferences = (
+				1C6054E7272920B600DFBEB9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 1C95FECC270FDBFD00381E0B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,6 +227,7 @@
 				1C95FED3270FDBFD00381E0B /* AddViewController.swift in Sources */,
 				1C8FD97727101C37003BE379 /* AnniversaryCalc++Int.swift in Sources */,
 				1C95FF05270FEB4900381E0B /* ListCollectionViewCell.swift in Sources */,
+				1C6054EB2729213700DFBEB9 /* AnniversaryCalc++UIAlert.swift in Sources */,
 				1C8FD97927101FCA003BE379 /* AnniversaryCalc++Date.swift in Sources */,
 				1C95FECF270FDBFD00381E0B /* AppDelegate.swift in Sources */,
 				1C95FF03270FE99B00381E0B /* ListViewController.swift in Sources */,
@@ -440,6 +452,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C6054E7272920B600DFBEB9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C6054E8272920B600DFBEB9 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C6054E7272920B600DFBEB9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C95FEC3270FDBFD00381E0B /* Project object */;
 }

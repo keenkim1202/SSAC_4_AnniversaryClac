@@ -32,6 +32,11 @@ class AddViewController: UIViewController {
     
   }
   
+  // MARK: Alert
+  fileprivate func showAlert(_ title: String, _ message: String ) {
+    UIAlertController.show(self, title: title, message: message)
+  }
+  
   // MARK: - Action
   @IBAction func onDatePicker(_ sender: UIDatePicker) {
     self.view.endEditing(true)
@@ -41,8 +46,13 @@ class AddViewController: UIViewController {
   
   @IBAction func onAddButton(_ sender: Any) {
     let title = titleTextField.text!
-    let date = df.toString(date: newDate)
-    AnniversaryData.anniversaryList.append(Anniversary(title: title, date: date))
+    if !title.isEmpty {
+      let date = df.toString(date: newDate)
+      AnniversaryData.anniversaryList.append(Anniversary(title: title, date: date))
+      self.view.endEditing(true)
+      showAlert("🎊", "기념일 추가 성공!")
+    } else {
+      showAlert("⚠️ 오류 🤯", "어떤 기념일인가요?\n타이틀을 적어주세요.")
+    }
   }
-  
 }
