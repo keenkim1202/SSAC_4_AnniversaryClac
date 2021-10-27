@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fGa-dW-Crs">
-                                <rect key="frame" x="10" y="54" width="394" height="759"/>
+                                <rect key="frame" x="10" y="98" width="394" height="715"/>
                                 <color key="backgroundColor" red="0.9559714198" green="0.9990388751" blue="0.81958144899999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a69-Ty-tTZ">
                                     <size key="itemSize" width="166" height="166"/>
@@ -120,7 +120,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="기념일 목록" id="VXa-aM-7wg">
-                        <barButtonItem key="rightBarButtonItem" title="가준날짜 변경" id="Xje-43-Rmd">
+                        <barButtonItem key="rightBarButtonItem" title="기준 날짜 변경" id="Xje-43-Rmd">
                             <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
                                 <segue destination="1R0-Gl-BcQ" kind="show" id="lu6-Qk-wtE"/>
@@ -144,7 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="lri-My-pnc">
-                                <rect key="frame" x="0.0" y="207" width="414" height="492.5"/>
+                                <rect key="frame" x="0.0" y="204.5" width="414" height="492.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="변경할 기준일을 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b72-jx-Vzq">
                                         <rect key="frame" x="93.5" y="0.0" width="227.5" height="25.5"/>
@@ -224,6 +224,9 @@
                                         <rect key="frame" x="10" y="0.0" width="394" height="393"/>
                                         <color key="backgroundColor" red="0.96848052740000001" green="0.91655305249999997" blue="0.70729130880000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="onDatePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="OFL-yp-bNN"/>
+                                        </connections>
                                     </datePicker>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsc-Iw-zmC">
                                         <rect key="frame" x="30" y="425" width="354" height="60"/>
@@ -269,6 +272,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="기념일 등록"/>
+                                        <connections>
+                                            <action selector="onAddButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pWY-um-XDe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -293,7 +299,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="기념일 등록" id="1Dx-6Y-svC"/>
                     <connections>
-                        <outlet property="addButton" destination="vaH-qx-Tqf" id="kyA-Py-1YT"/>
                         <outlet property="anniversaryView" destination="vsc-Iw-zmC" id="Gjx-Ke-PA8"/>
                         <outlet property="dateLabel" destination="PCU-eb-Pr6" id="3rX-QB-tSM"/>
                         <outlet property="datePicker" destination="fRT-zX-dl9" id="v1a-eZ-sQh"/>
@@ -365,7 +370,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W9J-qv-ifq"/>
+        <segue reference="c9e-gh-Vio"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet.circle" catalog="system" width="128" height="121"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C6054DE27290B0D00DFBEB9 /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6054DD27290B0D00DFBEB9 /* ChangeDateViewController.swift */; };
+		1C6054E627291D4E00DFBEB9 /* AnniversaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6054E527291D4E00DFBEB9 /* AnniversaryData.swift */; };
 		1C8FD97727101C37003BE379 /* AnniversaryCalc++Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8FD97627101C37003BE379 /* AnniversaryCalc++Int.swift */; };
 		1C8FD97927101FCA003BE379 /* AnniversaryCalc++Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8FD97827101FCA003BE379 /* AnniversaryCalc++Date.swift */; };
 		1C95FECF270FDBFD00381E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C95FECE270FDBFD00381E0B /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		1C6054DD27290B0D00DFBEB9 /* ChangeDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateViewController.swift; sourceTree = "<group>"; };
+		1C6054E527291D4E00DFBEB9 /* AnniversaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryData.swift; sourceTree = "<group>"; };
 		1C8FD97627101C37003BE379 /* AnniversaryCalc++Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryCalc++Int.swift"; sourceTree = "<group>"; };
 		1C8FD97827101FCA003BE379 /* AnniversaryCalc++Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryCalc++Date.swift"; sourceTree = "<group>"; };
 		1C95FECB270FDBFD00381E0B /* AnniversaryCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnniversaryCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				1C95FED4270FDBFD00381E0B /* Main.storyboard */,
 				1C95FED7270FDBFE00381E0B /* Assets.xcassets */,
 				1C95FED9270FDBFE00381E0B /* LaunchScreen.storyboard */,
+				1C6054E527291D4E00DFBEB9 /* AnniversaryData.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				1C95FECF270FDBFD00381E0B /* AppDelegate.swift in Sources */,
 				1C95FF03270FE99B00381E0B /* ListViewController.swift in Sources */,
 				1C95FED1270FDBFD00381E0B /* SceneDelegate.swift in Sources */,
+				1C6054E627291D4E00DFBEB9 /* AnniversaryData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

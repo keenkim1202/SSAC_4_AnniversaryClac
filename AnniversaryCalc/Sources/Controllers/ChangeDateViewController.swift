@@ -10,7 +10,7 @@ import UIKit
 class ChangeDateViewController: UIViewController {
   
   // MARK: - Properties
-  var newDate = Date()
+  var changeDate = Date()
   
   // MARK: - UI
   @IBOutlet weak var datePicker: UIDatePicker!
@@ -24,7 +24,7 @@ class ChangeDateViewController: UIViewController {
   // MARK: - PrepareForSegue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let destination = segue.destination as! ListViewController
-    destination.today = newDate
+    destination.today = changeDate
   }
   
   // MARK: - Actions
@@ -38,7 +38,7 @@ class ChangeDateViewController: UIViewController {
     df.dateStyle = . medium
     df.timeStyle = .medium
     
-    newDate = datePicker.date
-    choosenLabel.text = df.string(from: newDate)
+    changeDate = datePicker.date
+    choosenLabel.text = df.string(from: changeDate)
   }
 }

@@ -20,18 +20,6 @@ class ListViewController: UIViewController {
     "background_9", "background_10", "background_11", "background_12"
   ]
   
-  var anniversaryList: [Anniversary] = [
-    Anniversary(title: "광복절", date: "2021-08-15"),
-    Anniversary(title: "생일", date: "2021-12-13"),
-    Anniversary(title: "설날", date: "2022-01-01"),
-    Anniversary(title: "빼빼로데이", date: "2021-11-11"),
-    Anniversary(title: "크리스마스", date: "2021-12-25"),
-    Anniversary(title: "모레", date: "2021-10-10"),
-    Anniversary(title: "내일", date: "2021-10-09"),
-    Anniversary(title: "오늘", date: "2021-10-08"),
-    Anniversary(title: "어제", date: "2021-10-07")
-  ]
-  
   // MARK: UI
   @IBOutlet weak var collectionView: UICollectionView!
   
@@ -74,14 +62,14 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDelegate
 // MARK: Extension - UICollectionViewDataSource
 extension ListViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return anniversaryList.count
+    return AnniversaryData.anniversaryList.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
     cell.cellConfigure()
     
-    let item = anniversaryList[indexPath.row]
+    let item = AnniversaryData.anniversaryList[indexPath.row]
     cell.anniImageView.image = getRandomBackgroundImage(backgroundImages)
     cell.anniTitleLabel.text = item.title
     cell.anniDateLabel.text = item.date
